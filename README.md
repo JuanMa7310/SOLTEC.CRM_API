@@ -2,7 +2,7 @@
 
 ![image](https://img.shields.io/badge/license-LGPL-3.svg)
 
-**SOLTEC.CRM_API** (**CRM_API*). The concept refers to a type of software that enables the
+**SOLTEC.CRM_API** (**CRM_API**). The concept refers to a type of software that enables the
 integration of CRM_API processes, systems and tools. By definition, it standardizes workflows, improving
 operational efficiency and increasing the productivity of the *CRM_API* team, which is achieved through 
 a unified view of data and the automation of processes. 
