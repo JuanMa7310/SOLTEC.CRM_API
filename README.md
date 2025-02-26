@@ -21,15 +21,15 @@ Please download and install the following dependencies:
 
 - [NUnit 3 Test Adapter](https://marketplace.visualstudio.com/items?itemName=NUnitDevelopers.NUnit3TestAdapter)
 
-Then navigate to the Sources directory and open the solution file *SOLTEC.<Module>.sln*.
+Then navigate to the Sources directory and open the solution file *SOLTEC.CRM_API.sln*.
 
 # Citing
 
 Cite this work as:
 
 ```bibtex
-@misc{soltec2024<Module>,
-  title={SOLTEC.<Module>},
+@misc{soltec2025CRM_API,
+  title={SOLTEC.CRM_API},
   author={Juan Manuel Pardo García autor},
   year={2025},
   url={http://www.SOLTEC.com/COBUMAS/CRM_API}
