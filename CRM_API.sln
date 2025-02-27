@@ -6,6 +6,16 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{308A1410-521A-4FA4-9BD2-3DB6CC8792F1}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\APIDocumentation.md = Documentation\APIDocumentation.md
+		Documentation\APIDocumentation_ES.md = Documentation\APIDocumentation_ES.md
+		Documentation\ArchitecctureDetails.md = Documentation\ArchitecctureDetails.md
+		Documentation\ArchitecctureDetails_ES.md = Documentation\ArchitecctureDetails_ES.md
+		Documentation\InstallationGuide.md = Documentation\InstallationGuide.md
+		Documentation\InstallationGuid_ES.md = Documentation\InstallationGuid_ES.md
+		Documentation\SecurityGuideLines.md = Documentation\SecurityGuideLines.md
+		Documentation\SecurityGuideLines_ES.md = Documentation\SecurityGuideLines_ES.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{44475BE1-0AB8-451D-AC47-C4FC3DEE519C}"
 EndProject
@@ -24,6 +34,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOLTEC.CRM_API.Application", "src\SOLTEC.CRM_API.Application\SOLTEC.CRM_API.Application.csproj", "{15CA705F-59E5-4E89-8E98-A3314C842897}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOLTEC.CRM_API.Tests", "Tests\SOLTEC.CRM_API.Tests\SOLTEC.CRM_API.Tests.csproj", "{541519DB-1F5D-4AFF-90B9-0186E5B61DE8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{D107F4C8-89CC-BEA8-D3D7-CA6B7733353D}"
+	ProjectSection(SolutionItems) = preProject
+		CONTRIBUTORS.txt = CONTRIBUTORS.txt
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
