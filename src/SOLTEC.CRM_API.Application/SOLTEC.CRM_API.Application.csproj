@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SOLTEC.CRM_API.Domain\SOLTEC.CRM_API.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

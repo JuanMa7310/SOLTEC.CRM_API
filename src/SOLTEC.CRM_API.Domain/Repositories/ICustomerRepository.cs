@@ -1,5 +1,8 @@
-﻿namespace SOLTEC.CRM_API.Domain.Repositories;
+﻿using SOLTEC.CRM_API.Domain.Entities;
 
-public class ICustomerRepository
+namespace SOLTEC.CRM_API.Domain.Repositories;
+
+public interface ICustomerRepository : IGenericRepository<Customer>
 {
+    Task<IEnumerable<Customer>> GetActiveCustomersAsync();
 }
