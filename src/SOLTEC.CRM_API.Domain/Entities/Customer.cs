@@ -28,9 +28,19 @@ public class Customer : BaseEntity
     public bool IsActive { get; set; }
 
     /// <summary>
+    /// Branches
+    /// </summary>
+    public ICollection<Branch>? Branches { get; set; };
+    /// <summary>
+    /// Invoices
+    /// </summary>
+    public ICollection<Invoice>? Invoices { get; set; };
+
+    #region Navigation Foreign Keys
+    /// <summary>
     /// Primary contact id
     /// </summary>
-    public int PrimaryContactId { get; set; }
+    public Guid PrimaryContactId { get; set; }
     /// <summary>
     /// Primary contact
     /// </summary>
@@ -39,7 +49,7 @@ public class Customer : BaseEntity
     /// <summary>
     /// Address id
     /// </summary>
-    public int AddressId { get; set; }
+    public Guid AddressId { get; set; }
     /// <summary>
     /// Address
     /// </summary>
@@ -48,19 +58,11 @@ public class Customer : BaseEntity
     /// <summary>
     /// Credit id
     /// </summary>
-    public int? CreditId { get; set; }
+    public Guid? CreditId { get; set; }
     /// <summary>
     /// Credit
     /// </summary>
     [ForeignKey("CreditId")]
     public Credit? Credit { get; set; }
-
-    /// <summary>
-    /// Branches
-    /// </summary>
-    public ICollection<Branch>? Branches { get; set; };
-    /// <summary>
-    /// Invoices
-    /// </summary>
-    public ICollection<Invoice>? Invoices { get; set; };
+    #endregion
 }

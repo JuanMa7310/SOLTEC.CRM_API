@@ -16,14 +16,16 @@ public class Contact : BaseEntity
 
     public string Department { get; set; }
 
-    public int PhoneId { get; set; }
-    [ForeignKey("PhoneId")]
-    public Phone Phone { get; set; }
-
     [EmailAddress]
     public string Email { get; set; }
 
     public string Notes { get; set; }
 
     public bool IsActive { get; set; }
+
+    #region Navigation Foreign Keys
+    public Guid PhoneId { get; set; }
+    [ForeignKey("PhoneId")]
+    public Phone Phone { get; set; }
+    #endregion
 }
