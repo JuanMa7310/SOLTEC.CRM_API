@@ -59,6 +59,15 @@ public class Contact : BaseEntity
     /// </summary>
     [Required]
     [ForeignKey("PhoneId")]
-    public Phone Phone { get; set; }
+    public virtual Phone Phone { get; set; }
     #endregion
+
+    /// <summary>
+    /// Identificador de la dirección asociada al cliente (Clave foránea).
+    /// </summary>
+    public virtual Customer Customer { get; set; }
+    /// <summary>
+    /// Identificador de la dirección asociada a la sucursal (Clave foránea).
+    /// </summary>
+    public virtual Branch Branch { get; set; }
 }

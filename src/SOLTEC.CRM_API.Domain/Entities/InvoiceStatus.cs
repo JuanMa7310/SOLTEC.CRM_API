@@ -12,4 +12,9 @@ public class InvoiceStatus : BaseEntity
     /// </summary>
     [Required]
     public string Description { get; set; }
+
+    /// <summary>
+    /// Identificador de la factura asociada al tipo de pago (Clave foránea).
+    /// </summary>
+    public virtual Invoice Invoice { get; set; }
 }

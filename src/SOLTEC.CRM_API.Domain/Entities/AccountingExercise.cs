@@ -24,4 +24,10 @@ public class AccountingExercise : BaseEntity
     /// </summary>
     [Required]
     public DateOnly EndDate { get; set; }
+
+    /// <summary>
+    /// Identificador de la factura asociada al ejercicio contable (Clave foránea).
+    /// </summary>
+    public virtual Invoice Invoice { get; set; }
+
 }

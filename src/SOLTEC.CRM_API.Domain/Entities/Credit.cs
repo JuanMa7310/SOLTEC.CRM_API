@@ -18,4 +18,9 @@ public class Credit : BaseEntity
     /// </summary>
     [Required]
     public decimal UsedAmount { get; set; }
+
+    /// <summary>
+    /// Identificador del cliente (Clave foránea).
+    /// </summary>
+    public virtual Customer Customer { get; set; }
 }

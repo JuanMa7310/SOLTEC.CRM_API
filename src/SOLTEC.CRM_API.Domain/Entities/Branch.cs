@@ -18,7 +18,7 @@ public class Branch : BaseEntity
     /// <summary>
     /// Lista de contactos asociados a la sucursal.
     /// </summary>
-    public ICollection<Contact> Contacts { get; set; }
+    public virtual IEnumerable<Contact> Contacts { get; set; }
     #endregion
 
     #region Navigation Foreign Keys
@@ -32,6 +32,12 @@ public class Branch : BaseEntity
     /// </summary>
     [Required]
     [ForeignKey("AddressId")]
-    public Address Address { get; set; }
+    public virtual Address Address { get; set; }
+    /// <summary>
+    /// Identificador de la dirección de la sucursal (Clave foránea).
+    /// </summary>
+    public Guid CustomerId { get; set; }
+    [ForeignKey("CustomerId")]
+    public virtual Customer Customer { get; set; }
     #endregion
 }

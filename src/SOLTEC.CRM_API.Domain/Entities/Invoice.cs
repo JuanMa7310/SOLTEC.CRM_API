@@ -66,7 +66,7 @@ public class Invoice : BaseEntity
     /// </summary>
     [Required]
     [ForeignKey("CustomerId")]
-    public Customer Customer { get; set; }
+    public virtual Customer Customer { get; set; }
 
     /// <summary>
     /// Clave foránea: Identificador del tipo de pago.
@@ -79,7 +79,7 @@ public class Invoice : BaseEntity
     /// </summary>
     [Required]
     [ForeignKey("PaymentTypeId")]
-    public PaymentType PaymentType { get; set; }
+    public virtual PaymentType PaymentType { get; set; }
 
     /// <summary>
     /// Clave foránea: Identificador del tipo de factura.
@@ -92,7 +92,7 @@ public class Invoice : BaseEntity
     /// </summary>
     [Required]
     [ForeignKey("InvoiceTypeId")]
-    public InvoiceType InvoiceType { get; set; }
+    public virtual InvoiceType InvoiceType { get; set; }
 
     /// <summary>
     /// Clave foránea: Identificador del estado de la factura.
@@ -105,7 +105,7 @@ public class Invoice : BaseEntity
     /// </summary>
     [Required]
     [ForeignKey("InvoiceStatusId")]
-    public InvoiceStatus Status { get; set; }
+    public virtual InvoiceStatus InvoiceStatus { get; set; }
 
     /// <summary>
     /// Clave foránea: Identificador del ejercicio contable.
@@ -118,6 +118,6 @@ public class Invoice : BaseEntity
     /// </summary>
     [Required]
     [ForeignKey("AccountingExerciseId")]
-    public AccountingExercise AccountingExerccise { get; set; }
+    public virtual AccountingExercise AccountingExerccise { get; set; }
     #endregion Navigation Foreign Keys
 }

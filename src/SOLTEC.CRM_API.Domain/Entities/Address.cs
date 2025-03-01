@@ -53,4 +53,14 @@ public class Address : BaseEntity
     /// </summary>
     [Required, MaxLength(100)]
     public string Country { get; set; }
+
+
+    /// <summary>
+    /// Identificador de la dirección del cliente (Clave foránea).
+    /// </summary>
+    public virtual Customer Customer { get; set; }
+    /// <summary>
+    /// Identificador de la dirección de la sucursal (Clave foránea).
+    /// </summary>
+    public virtual Branch Branch { get; set; }
 }

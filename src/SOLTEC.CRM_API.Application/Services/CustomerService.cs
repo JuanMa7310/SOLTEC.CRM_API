@@ -20,8 +20,10 @@ public class CustomerService(ICustomerRepository customerRepository) : GenericSe
         return new CustomerDTO
         {
             Id = entity.Id,
-            FirstName = entity.Name,
-            Address = entity.Address,
+            Name = entity.Name,
+            TaxId = entity.TaxId,
+            HasCredit = entity.HasCredit,
+            Notes = entity.Notes,
             IsActive = entity.IsActive
         };
     }
@@ -31,11 +33,10 @@ public class CustomerService(ICustomerRepository customerRepository) : GenericSe
         return new Customer
         {
             Id = dto.Id,
-            FirstName = dto.FirstName,
-            LastName = dto.LastName,
-            Email = dto.Email,
-            PhoneNumber = dto.PhoneNumber,
-            Address = dto.Address,
+            Name = dto.Name,
+            TaxId = dto.TaxId,
+            HasCredit = dto.HasCredit,
+            Notes = dto.Notes,
             IsActive = dto.IsActive
         };
     }

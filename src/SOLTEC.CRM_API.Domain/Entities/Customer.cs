@@ -59,7 +59,7 @@ public class Customer : BaseEntity
     /// </summary>
     [Required]
     [ForeignKey("PrimaryContactId")]
-    public Contact PrimaryContact { get; set; }
+    public virtual Contact PrimaryContact { get; set; }
 
     /// <summary>
     /// Identificador de la dirección del cliente.
@@ -71,7 +71,7 @@ public class Customer : BaseEntity
     /// </summary>
     [Required]
     [ForeignKey("AddressId")]
-    public Address Address { get; set; }
+    public virtual Address Address { get; set; }
 
     /// <summary>
     /// Identificador del crédito asociado (opcional).
@@ -83,6 +83,6 @@ public class Customer : BaseEntity
     /// </summary>
     [Required]
     [ForeignKey("CreditId")]
-    public Credit? Credit { get; set; }
+    public virtual Credit? Credit { get; set; }
     #endregion
 }

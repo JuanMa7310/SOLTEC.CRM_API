@@ -1,8 +1,15 @@
-﻿using SOLTEC.CRM_API.Application.DTOs;
+﻿using SOLTEC.CRM_API.Domain.Entities;
 
 namespace SOLTEC.CRM_API.Application.Interfaces;
 
-public interface ICustomerService : IGenericService<CustomerDTO>
+/// <summary>
+/// Interfaz de servicio para la entidad Customer.
+/// </summary>
+public interface ICustomerService : IGenericService<Customer>
 {
-    Task<IEnumerable<CustomerDTO>> GetActiveCustomersAsync();
+    /// <summary>
+    /// Obtiene todos los clientes que están activos.
+    /// </summary>
+    /// <returns>Lista de clientes activos.</returns>
+    Task<IEnumerable<Customer>> GetActiveCustomersAsync();
 }

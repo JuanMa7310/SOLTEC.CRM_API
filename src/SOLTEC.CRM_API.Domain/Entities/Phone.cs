@@ -22,4 +22,9 @@ public class Phone : BaseEntity
     /// Indica si el número de teléfono es un móvil.
     /// </summary>
     public bool IsMobile { get; set; }
+
+    /// <summary>
+    /// Identificador del contacto asociado al teléfono (Clave foránea).
+    /// </summary>
+    public virtual Contact Contact { get; set; }
 }
