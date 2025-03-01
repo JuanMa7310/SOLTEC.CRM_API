@@ -8,7 +8,7 @@ public class BaseDTO
     /// <summary>
     /// Id of the entity
     /// </summary>
-    public int Id { get; set; }
+    public Guid Id { get; set; }
     /// <summary>
     /// Created at
     /// </summary>

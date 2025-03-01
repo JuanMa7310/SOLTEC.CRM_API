@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.AspNetCore.Mvc;
 using SOLTEC.CRM_API.Configurations;
+using SOLTEC.CRM_API.Extensions;
 using SOLTEC.CRM_API.Infrastructure;
 using SOLTEC.CRM_API.Infrastructure.Persistence;
+using SOLTEC.CRM_API.Infrastructure.Persistence.SeeData;
 using SOLTEC.CRM_API.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,6 +27,8 @@ builder.Services.AddAntiforgery(options =>
 // Protección contra inyección SQL usando consultas parametrizadas en EF Core
 builder.Services.AddDatabaseConfiguration(builder.Configuration);
 builder.Services.AddAuthenticationConfiguration(builder.Configuration);
+// Registrar CRMDbInitializer como servicio
+builder.Services.AddScoped<CRMDbInitializer>();
 
 //Protección contra inyección de código en los datos recibidos.
 builder.Services.AddMvc(options =>
@@ -40,6 +44,8 @@ app.UseMiddleware<ExceptionMiddleware>();
 app.UseMiddleware<JwtMiddleware>();
 app.UseCorsPolicy();
 app.UseSwaggerDocumentation();
+// Usar el Middleware para inicializar la base de datos
+app.UseDatabaseInitialization();
 
 app.Use(async (context, next) =>
 {

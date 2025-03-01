@@ -20,10 +20,7 @@ public class CustomerService(ICustomerRepository customerRepository) : GenericSe
         return new CustomerDTO
         {
             Id = entity.Id,
-            FirstName = entity.FirstName,
-            LastName = entity.LastName,
-            Email = entity.Email,
-            PhoneNumber = entity.PhoneNumber,
+            FirstName = entity.Name,
             Address = entity.Address,
             IsActive = entity.IsActive
         };

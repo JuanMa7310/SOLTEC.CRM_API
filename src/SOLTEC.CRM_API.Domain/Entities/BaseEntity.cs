@@ -1,28 +1,37 @@
-﻿namespace SOLTEC.CRM_API.Domain.Entities;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SOLTEC.CRM_API.Domain.Entities;
 
 /// <summary>
-/// Base entity class
+/// Clase base para todas las entidades, proporcionando un identificador único y metadatos de auditoría.
 /// </summary>
 public abstract class BaseEntity
 {
     /// <summary>
-    /// Id of the entity
+    /// Clave primaria: Identificador único de la entidad.
     /// </summary>
-    public int Id { get; set; }
+    [Key]
+    public Guid Id { get; set; } = Guid.NewGuid();
+
     /// <summary>
-    /// Created at
+    /// Usuario que creó el registro.
+    /// </summary>
+    [MaxLength(256)]
+    public string CreatedBy { get; set; }
+
+    /// <summary>
+    /// Fecha y hora de creación del registro.
     /// </summary>
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
     /// <summary>
-    /// Created by
+    /// Usuario que realizó la última actualización del registro.
     /// </summary>
-    public string CreatedBy { get; set; }
+    [MaxLength(256)]
+    public string UpdatedBy { get; set; }
+
     /// <summary>
-    /// Updated at
+    /// Fecha y hora de la última actualización del registro.
     /// </summary>
     public DateTime? UpdatedAt { get; set; }
-    /// <summary>
-    /// Updated by
-    /// </summary>
-    public string UpdatedBy { get; set; }
 }

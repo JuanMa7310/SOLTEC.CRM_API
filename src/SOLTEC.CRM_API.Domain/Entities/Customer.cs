@@ -4,14 +4,20 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace SOLTEC.CRM_API.Domain.Entities;
 
 /// <summary>
-/// Customer data transfer object
+/// Representa un cliente en el sistema.
 /// </summary>
 public class Customer : BaseEntity
 {
-    [Required]
+    /// <summary>
+    /// Nombre del cliente.
+    /// </summary>
+    [Required, MaxLength(255)]
     public string Name { get; set; }
 
-    [Required]
+    /// <summary>
+    /// Identificador fiscal del cliente.
+    /// </summary>
+    [Required, MaxLength(50)]
     public string TaxId { get; set; }
     /// <summary>
     /// Has credit
@@ -19,49 +25,63 @@ public class Customer : BaseEntity
     public bool HasCredit { get; set; }
 
     /// <summary>
-    /// Phone number
+    /// Observaciones sobre el cliente.
     /// </summary>
+    [MaxLength(1024)]
     public string Notes { get; set; }
+
     /// <summary>
-    /// Is Active
+    /// Indica si el cliente está activo.
     /// </summary>
     public bool IsActive { get; set; }
 
+    #region Navigation Collections
     /// <summary>
-    /// Branches
+    /// Lista de sucursales asociadas al cliente.
     /// </summary>
-    public ICollection<Branch>? Branches { get; set; };
+    public ICollection<Branch>? Branches { get; set; }
+
     /// <summary>
-    /// Invoices
+    /// Lista de facturas asociadas al cliente.
     /// </summary>
-    public ICollection<Invoice>? Invoices { get; set; };
+    public ICollection<Invoice>? Invoices { get; set; }
+    #endregion
 
     #region Navigation Foreign Keys
     /// <summary>
-    /// Primary contact id
+    /// Identificador del contacto principal.
     /// </summary>
+    [Required]
     public Guid PrimaryContactId { get; set; }
+
     /// <summary>
-    /// Primary contact
+    /// Relación con el contacto principal.
     /// </summary>
+    [Required]
     [ForeignKey("PrimaryContactId")]
     public Contact PrimaryContact { get; set; }
+
     /// <summary>
-    /// Address id
+    /// Identificador de la dirección del cliente.
     /// </summary>
     public Guid AddressId { get; set; }
+
     /// <summary>
-    /// Address
+    /// Relación con la dirección del cliente.
     /// </summary>
+    [Required]
     [ForeignKey("AddressId")]
     public Address Address { get; set; }
+
     /// <summary>
-    /// Credit id
+    /// Identificador del crédito asociado (opcional).
     /// </summary>
     public Guid? CreditId { get; set; }
+
     /// <summary>
-    /// Credit
+    /// Relación con el crédito del cliente.
     /// </summary>
+    [Required]
     [ForeignKey("CreditId")]
     public Credit? Credit { get; set; }
     #endregion

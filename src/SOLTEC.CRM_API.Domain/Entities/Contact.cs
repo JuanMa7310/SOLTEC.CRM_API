@@ -3,28 +3,61 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SOLTEC.CRM_API.Domain.Entities;
 
+/// <summary>
+/// Representa un contacto en el sistema.
+/// </summary>
 public class Contact : BaseEntity
 {
-    [Required]
+    /// <summary>
+    /// Nombre del contacto.
+    /// </summary>
+    [Required, MaxLength(100)]
     public string FirstName { get; set; }
 
-    [Required]
+    /// <summary>
+    /// Apellidos del contacto.
+    /// </summary>
+    [Required, MaxLength(100)]
     public string LastName { get; set; }
 
-    [Required]
+    /// <summary>
+    /// Identificador fiscal del contacto.
+    /// </summary>
+    [Required, MaxLength(50)]
     public string TaxId { get; set; }
 
+    /// <summary>
+    /// Departamento al que pertenece el contacto.
+    /// </summary>
     public string Department { get; set; }
 
-    [EmailAddress]
+    /// <summary>
+    /// Correo electrónico del contacto.
+    /// </summary>
+    [EmailAddress, MaxLength(255)]
     public string Email { get; set; }
 
-    public string Notes { get; set; }
-
+    /// <summary>
+    /// Indica si el contacto está activo.
+    /// </summary>
     public bool IsActive { get; set; }
 
+    /// <summary>
+    /// Observaciones sobre el contacto.
+    /// </summary>
+    [MaxLength(1024)]
+    public string Notes { get; set; }
+
     #region Navigation Foreign Keys
+    /// <summary>
+    /// Clave foránea: Identificador del teléfono asociado.
+    /// </summary>
+    [Required]
     public Guid PhoneId { get; set; }
+    /// <summary>
+    /// Relación con el teléfono del contacto.
+    /// </summary>
+    [Required]
     [ForeignKey("PhoneId")]
     public Phone Phone { get; set; }
     #endregion

@@ -13,17 +13,17 @@ public static class DbFactory
 
         if (dbConfig!.Provider == "MySQL")
         {
-            services.AddDbContext<AppDbContext>(options =>
+            services.AddDbContext<CRMDbContext>(options =>
                 options.UseMySql(dbConfig.ConnectionString, ServerVersion.AutoDetect(dbConfig.ConnectionString)));
         }
         else if (dbConfig.Provider == "SQLServer")
         {
-            services.AddDbContext<AppDbContext>(options =>
+            services.AddDbContext<CRMDbContext>(options =>
                 options.UseSqlServer(dbConfig.ConnectionString, sqlOptions => sqlOptions.EnableRetryOnFailure()));
         }
         else if (dbConfig.Provider == "PostgreSQL")
         {
-            services.AddDbContext<AppDbContext>(options =>
+            services.AddDbContext<CRMDbContext>(options =>
                 options.UseNpgsql(dbConfig.ConnectionString));
         }
     }
